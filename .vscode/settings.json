@@ -1,0 +1,5 @@
+{
+  // Use the Windows Flutter install, which sees the phone over USB directly
+  // (the WSL one needed usbipd to reach it).
+  "dart.flutterSdkPath": "C:\\src\\flutter"
+}

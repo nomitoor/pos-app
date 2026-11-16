@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Day-to-day development: "Urban Thread Dev" app, test data, DEV badge.
+      "name": "Dev (Android)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "dev"],
+      "toolArgs": ["--dart-define-from-file=.env.dev"]
+    },
+    {
+      // Web has no flavors; .env.dev still switches on the DEV badge.
+      "name": "Dev (Web)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "toolArgs": ["--dart-define-from-file=.env.dev"]
+    },
+    {
+      // The shop's real app. Careful: this runs against real data.
+      "name": "Prod (release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "args": ["--flavor", "prod"],
+      "toolArgs": ["--dart-define-from-file=.env.prod"]
+    }
+  ]
+}

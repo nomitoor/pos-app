@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    $FLUTTER_BASE_HREF is replaced by the --base-href argument of
+    `flutter build web`. It must start and end with "/".
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Urban Thread point of sale: billing, stock and daily sales.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Urban Thread">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Urban Thread POS</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Same black-and-gold as the in-app splash, so loading looks continuous. */
+    html, body { margin: 0; height: 100%; background: #000000; }
+    #boot {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .4s ease;
+    }
+    #boot .thread {
+      width: 160px; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, #A68D50 0 40%, transparent 40%);
+      background-size: 250% 100%;
+      animation: draw 1.4s ease-in-out infinite;
+    }
+    @keyframes draw {
+      from { background-position: 100% 0; }
+      to   { background-position: -50% 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #boot .thread { animation: none; background: #A68D50; }
+    }
+  </style>
+</head>
+<body>
+  <div id="boot" role="progressbar" aria-label="Loading Urban Thread POS">
+    <div class="thread"></div>
+  </div>
+
+  <script>
+    // Hide the loading line as soon as Flutter paints its first frame.
+    window.addEventListener('flutter-first-frame', function () {
+      var boot = document.getElementById('boot');
+      if (!boot) return;
+      boot.style.opacity = '0';
+      setTimeout(function () { boot.remove(); }, 400);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

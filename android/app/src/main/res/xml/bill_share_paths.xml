@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bill PDFs written by MainActivity.sharePdf, shared with WhatsApp. -->
+<paths>
+    <cache-path name="shared_bills" path="shared_bills/" />
+</paths>

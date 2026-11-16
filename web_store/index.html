@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Urban Thread</title>
+  <meta name="description" content="Urban Thread clothing. Order online with cash on delivery across Lahore.">
+  <meta name="theme-color" content="#F2F3EF">
+  <meta property="og:title" content="Urban Thread">
+  <meta property="og:description" content="Streetwear delivered in Lahore. Pay cash when it arrives.">
+  <meta property="og:type" content="website">
+  <!-- WhatsApp/Facebook need a full address here once the site is online,
+       e.g. https://urbanthread.netlify.app/assets/share.png -->
+  <meta property="og:image" content="assets/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Urban Thread: everyday streetwear, delivered in Lahore. Cash on delivery.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/mark_on_dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Urban Thread home">
+      <img src="assets/logo_on_dark.png" alt="Urban Thread">
+    </a>
+    <nav class="topnav">
+      <a href="#/about" class="navlink wide">About</a>
+      <a href="#/delivery" class="navlink wide">Help</a>
+      <a href="#/track" class="navlink">Track order</a>
+      <a href="#/cart" class="cartbtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4" stroke-linecap="round"/></svg>
+        <span id="cart-count" class="badge" hidden>0</span>
+      </a>
+    </nav>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+  <main id="app" class="container" aria-live="polite"></main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <img src="assets/mark_on_dark.png" alt="" class="footmark">
+        <p>Cash on delivery, anywhere in Lahore</p>
+        <p id="foot-contact"></p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <div>
+          <h2>Shop</h2>
+          <a href="#/">All products</a>
+          <a href="#/size-guide">Size guide</a>
+          <a href="#/track">Track order</a>
+        </div>
+        <div>
+          <h2>Help</h2>
+          <a href="#/delivery">Delivery and payment</a>
+          <a href="#/exchanges">Exchanges</a>
+          <a href="#/faq">FAQ</a>
+          <a href="#/contact">Contact us</a>
+        </div>
+        <div>
+          <h2>Urban Thread</h2>
+          <a href="#/about">About us</a>
+          <a href="#/privacy">Privacy policy</a>
+          <a href="#/terms">Terms and conditions</a>
+        </div>
+      </nav>
+    </div>
+    <p class="muted foot-copy">© <span id="year"></span> Urban Thread</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
